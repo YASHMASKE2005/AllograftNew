@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Registration - Allograft</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .registration-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .registration-container h1 {
+            text-align: center;
+            margin-bottom: 0px;
+            color: #007bff;
+            font-weight: 600;
+        }
+        .registration-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #007bff;
+        }
+        input[type="file"] {
+            padding: 5px;
+            font-size: 1em;
+            font-family: 'Poppins', sans-serif;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .checkbox-group label {
+            font-weight: normal;
+        }
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media(max-width: 600px) {
+            .registration-container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="registration-container">
+    <h1>ALLOGRAFT</h1>
+    <h2>Hospital Registration</h2>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <!-- Hospital Name -->
+        <div class="form-group">
+            <label for="hospitalName">Hospital Name</label>
+            <input type="text" id="hospitalName" name="hospitalName" placeholder="Enter hospital's full legal name" required>
+        </div>
+
+        <!-- Hospital Registration Number -->
+        <div class="form-group">
+            <label for="registrationNumber">Hospital Registration Number</label>
+            <input type="text" id="registrationNumber" name="registrationNumber" placeholder="Enter official registration number" required>
+        </div>
+
+        <!-- Accreditation Certificates -->
+        <div class="form-group">
+            <label for="accreditationCertificates">Accreditation Certificates</label>
+            <input type="file" id="accreditationCertificates" name="accreditationCertificates" accept=".pdf,.jpg,.png" multiple>
+        </div>
+
+        <!-- Type of Hospital -->
+        <div class="form-group">
+            <label for="hospitalType">Type of Hospital</label>
+            <select id="hospitalType" name="hospitalType" required>
+                <option value="">Select Hospital Type</option>
+                <option value="Public">Public</option>
+                <option value="Private">Private</option>
+                <option value="Trust">Trust</option>
+                <option value="Specialty Hospital">Specialty Hospital</option>
+            </select>
+        </div>
+
+        <!-- Hospital Address -->
+        <div class="form-group">
+            <label for="hospitalAddress">Hospital Address</label>
+            <textarea id="hospitalAddress" name="hospitalAddress" rows="3" placeholder="Enter full physical address" required></textarea>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="form-group">
+            <label for="contactPhone">Contact Phone Number</label>
+            <input type="tel" id="contactPhone" name="contactPhone" placeholder="Enter contact phone number" required>
+        </div>
+        <div class="form-group">
+            <label for="contactEmail">Contact Email Address</label>
+            <input type="email" id="contactEmail" name="contactEmail" placeholder="Enter contact email address" required>
+        </div>
+        <div class="form-group">
+            <label for="websiteURL">Website URL</label>
+            <input type="text" id="websiteURL" name="websiteURL" placeholder="Enter hospital website URL">
+        </div>
+
+        <!-- Authorized Contact Person -->
+        <div class="form-group">
+            <label for="authorizedPersonName">Authorized Contact Person</label>
+            <input type="text" id="authorizedPersonName" name="authorizedPersonName" placeholder="Enter name" required>
+        </div>
+        <div class="form-group">
+            <label for="authorizedPersonDesignation">Designation</label>
+            <input type="text" id="authorizedPersonDesignation" name="authorizedPersonDesignation" placeholder="Enter designation" required>
+        </div>
+        <div class="form-group">
+            <label for="authorizedPersonContact">Contact Details</label>
+            <input type="tel" id="authorizedPersonContact" name="authorizedPersonContact" placeholder="Enter phone number" required>
+            <input type="email" id="authorizedPersonEmail" name="authorizedPersonEmail" placeholder="Enter email address" required>
+        </div>
+
+        <!-- Hospital Role -->
+        <div class="form-group">
+            <label for="hospitalRole">Hospital Role</label>
+            <select id="hospitalRole" name="hospitalRole" required>
+                <option value="">Select Role</option>
+                <option value="Donor">Donor</option>
+                <option value="Receiver">Receiver</option>
+                <option value="Both">Both</option>
+            </select>
+        </div>
+
+        <!-- Organ Donation Program Manager -->
+        <div class="form-group">
+            <label for="programManagerName">Organ Donation Program Manager</label>
+            <input type="text" id="programManagerName" name="programManagerName" placeholder="Enter name" required>
+        </div>
+        <div class="form-group">
+            <label for="programManagerDesignation">Designation</label>
+            <input type="text" id="programManagerDesignation" name="programManagerDesignation" placeholder="Enter designation" required>
+        </div>
+        <div class="form-group">
+            <label for="programManagerContact">Contact Information</label>
+            <input type="tel" id="programManagerContact" name="programManagerContact" placeholder="Enter phone number" required>
+            <input type="email" id="programManagerEmail" name="programManagerEmail" placeholder="Enter email address" required>
+        </div>
+
+        <!-- License Expiry Date -->
+        <div class="form-group">
+            <label for="licenseExpiryDate">License Expiry Date</label>
+            <input type="date" id="licenseExpiryDate" name="licenseExpiryDate">
+        </div>
+
+        <!-- List of Specialties -->
+        <div class="form-group">
+            <label for="specialties">List of Specialties</label>
+            <textarea id="specialties" name="specialties" rows="3" placeholder="List medical specialties offered"></textarea>
+        </div>
+
+        <!-- Previous Organ Transplant History -->
+        <div class="form-group">
+            <label for="transplantHistory">Previous Organ Transplant History</label>
+            <textarea id="transplantHistory" name="transplantHistory" rows="3" placeholder="Provide details (optional)"></textarea>
+        </div>
+
+        <!-- Insurance Partnerships -->
+        <div class="form-group">
+            <label for="insurancePartnerships">Insurance Partnerships</label>
+            <textarea id="insurancePartnerships" name="insurancePartnerships" rows="3" placeholder="List insurance providers (if any)"></textarea>
+        </div>
+
+        <!-- Security & Privacy Commitment -->
+        <div class="checkbox-group">
+            <input type="checkbox" id="privacyCommitment" name="privacyCommitment" required>
+            <label for="privacyCommitment">I confirm the hospital's commitment to the privacy and security of patient information.</label>
+        </div>
+
+        <!-- Terms and Conditions Agreement -->
+        <div class="checkbox-group">
+            <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+            <label for="termsAgreement">I agree to the platform's <a href="#">terms and conditions</a>, including organ donation policies.</label>
+        </div>
+
+        <!-- Digital Signature -->
+        <div class="form-group">
+            <label for="digitalSignature">Digital Signature</label>
+            <input type="file" id="digitalSignature" name="digitalSignature" accept=".jpg,.png,.pdf">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Register Hospital</button>
+    </form>
+</div>
+
+</body>
+</html>
