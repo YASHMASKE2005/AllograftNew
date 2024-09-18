@@ -24,6 +24,13 @@
             text-align: center;
             z-index: 1000;
         }
+        nav .logo {
+            float: left;
+            margin-left: 20px;
+        }
+        nav .logo img {
+            height: 50px;
+        }
         nav a {
             color: #333;
             margin: 0 20px;
@@ -34,6 +41,19 @@
         nav a:hover {
             color: #007bff;
         }
+
+        /* Ensure the links are centered */
+        nav .nav-links {
+            display: inline-block;
+        }
+
+        /* Clear the float for the logo */
+        nav::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
         header {
         background-image: url('28804263_7479842-Photoroom.png'); 
         background-size: cover; 
@@ -249,13 +269,17 @@
 <body>
 
 <nav>
-    <a href="#hero">Home</a>
-    <a href="#process">Why Donate?</a>
-    <a href="#facts">Organ Donation Facts</a>
-    <a href="#process">Organ Donation Process</a>
-    <a href="#spread-awareness">Spread Awareness</a>
-    <a href="#JoinUs">Join Us</a>
-
+    <div class="logo">
+        <img src="allograft-logo.png" alt="Allograft Logo">
+    </div>
+    <div class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#process">Why Donate?</a>
+        <a href="#facts">Organ Donation Facts</a>
+        <a href="#process">Organ Donation Process</a>
+        <a href="#spread-awareness">Spread Awareness</a>
+        <a href="#JoinUs">Join Us</a>
+    </div>
 </nav>
 
 <header id="hero">
