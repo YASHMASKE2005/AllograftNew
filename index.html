@@ -242,28 +242,96 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.call-to-action {
-    background-color: #007bff;
-    color: white;
-    padding: 20px 20px;
-    text-align: center;
-    font-size: 1.5em;
-    border-radius: 10px;
-}
-.call-to-action .btn {
-    margin-top: 10px;
-    background-color: #fff;
-    color: #007bff;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-}
-.call-to-action .btn:hover {
-    background-color: #0056b3;
-    color: #fff;
-}
+        #organ-need h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        #organ-need .info-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        #organ-need img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .call-to-action {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 20px;
+            text-align: center;
+            font-size: 1.5em;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .call-to-action .btn {
+            margin-top: 10px;
+            background-color: #fff;
+            color: #007bff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .call-to-action .btn:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+        #organ-need h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        #organ-need .info-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        #organ-need img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .call-to-action {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 20px;
+            text-align: center;
+            font-size: 1.5em;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .call-to-action .btn {
+            margin-top: 10px;
+            background-color: #fff;
+            color: #007bff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .call-to-action .btn:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -287,7 +355,9 @@
         <h1> ALLOGRAFT  <br> 
        Saving Lives Through Organ Donation </h1>
         <p>Join us in the mission to save lives through organ donation. Together, we can make a difference.</p>
+       <button class="btn" onclick="location.href='Allogaft-donor-regform.html'">Register as Donor</button>
         <button class="btn" onclick="scrollToSection('process')">Learn More</button>
+
     </div>
 </header>
 
@@ -374,11 +444,27 @@
     </div>
 </section>
 
-<section id="JoinUs">
-<section class="call-to-action">
-    <p>Ready to make a real impact? Become an advocate for organ donation today and help save lives. Your voice can inspire others to take action and give the gift of life. </p>  
-    <a href="Allogaft-donor-regform.html" class="btn"> Register as Individual Donor</a>
-    <a href="Allograft-hospital-regform.html" class="btn"> Register as Hospital</a>
+<section id="organ-need">
+    <h2>Need an Organ for Transplant?</h2>
+    <div class="info-section">
+        <div>
+            <p>When hospitals receive a patient in need of an organ transplant, time is of the essence. Our platform makes it easier for hospitals to request organs by leveraging our exclusive AI matching feature. Our advanced algorithm matches hospitals with the most suitable donor based on medical compatibility, ensuring the best outcomes for the patient.</p>
+            <p>Hospitals can raise an organ transplant request, which will be queued for AI matching. If a suitable donor is found, hospitals will be notified immediately to proceed with the transplant process.</p>
+            <p>Before submitting an organ request, hospitals must ensure they are registered on our platform. If you're already registered, simply proceed to the organ request form. If not, please register your hospital first to access this feature.</p>
+        </div>
+        <div>
+            <img src="organ-transplant.png" alt="Organ Transplant" height="380px">
+        </div>
+    </div>
+    <div class="call-to-action">
+        <p>Is your hospital registered with us?</p>
+        <button class="btn" onclick="location.href='RequestForm.html'">Yes, proceed to Organ Request Form</button>
+        <button class="btn" onclick="location.href='Allograft-hospital-regform.html'">No, Register Now</button>
+        <!-- <a href="RequestForm.html" class="btn">Yes, proceed to Organ Request Form</a>
+        <a href="Allograft-hospital-regform.html" class="btn">No, Register Now</a>-->
+    </div> 
+</section>
+
 
 </section>
 
@@ -394,6 +480,22 @@
         document.getElementById('donorCount').textContent = Math.floor(Math.random() * 1000) + ' Registered Donors';
         document.getElementById('transplantCount').textContent = Math.floor(Math.random() * 500) + ' Successful Transplants';
     }, 3000);
+
+    function checkRegistration() {
+        let isRegistered = confirm("Has your hospital registered on Allograft?");
+        if (isRegistered) {
+            window.location.href = 'Allograft-organ-request-form.html'; // Link to organ request form
+        } else {
+            alert("Please register your hospital first to proceed.");
+        }
+    }
+
+    // Dynamic real-time updates for donors and transplants
+    setInterval(() => {
+        document.getElementById('donorCount').textContent = Math.floor(Math.random() * 1000) + ' Registered Donors';
+        document.getElementById('transplantCount').textContent = Math.floor(Math.random() * 500) + ' Successful Transplants';
+    }, 3000);
+    
 </script>
 
 </body>
